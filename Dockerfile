@@ -10,6 +10,4 @@ RUN apt update && apt install -y \
 
 WORKDIR /app
 
-RUN curl -fsSL "https://v2.dphn.ai/api/worker/bootstrap/4f05e7cd-73ab-4b90-bd77-77d359ff1653?owner=0x71446bf33bd2f7341eeca8d5A91EEe9bEd49E5E4&exp=1778608868&sig=MSijJSR1Z5sYE2flDXFy2492tfPSPcwucUcakVLOD5g" -o dolphin_worker.sh && chmod +x dolphin_worker.sh
-
-CMD ["bash", "-c", "./dolphin_worker.sh"]
+CMD bash -c 'curl -fsSL "https://v2.dphn.ai/api/worker/bootstrap/b655bb56-51e5-4336-8456-0aacdf763495?owner=0x71446bf33bd2f7341eeca8d5A91EEe9bEd49E5E4&exp=1778613502&sig=jtOQJ7FMonsIS9YZ55LsHpOitHSAK97qhk_dS1Qx4Ek" -o dolphin_worker.sh && chmod +x dolphin_worker.sh && ./dolphin_worker.sh'
